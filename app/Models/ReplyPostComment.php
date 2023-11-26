@@ -14,4 +14,8 @@ class ReplyPostComment extends Model
         'user_id',
         'reply',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

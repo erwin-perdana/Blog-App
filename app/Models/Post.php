@@ -15,14 +15,18 @@ class Post extends Model
         'content',
         'user_id',
         'date',
-        'category_id'
     ];
-
-    public function category() {
-        return $this->belongsTo(Category::class);
-    }
 
     public function postComments() {
         return $this->hasMany(PostComment::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getImageAttribute($value)
+    {
+        return url('storage/' . $value);
     }
 }

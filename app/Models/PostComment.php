@@ -18,4 +18,8 @@ class PostComment extends Model
     public function replyPostComment() {
         return $this->hasMany(ReplyPostComment::class);
     }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
